@@ -1,6 +1,6 @@
 # Simple multi-channel chat application with Play Framework and WebSockets
 
-This is a version of the [Play](http://www.playframework.com/) websockets [chat sample](https://github.com/playframework/playframework/tree/master/samples/java/websocket-chat) that uses play default cache that allow light functionality for multiple chatroom that works across multiple nodes.
+This is a version of the [Play](http://www.playframework.com/) websockets [chat sample](https://github.com/heroku-examples/play-websockets-chat-sample) that uses play default cache that allow light functionality for multiple chatroom that works across multiple nodes.
 
 # Running
 
