@@ -4,15 +4,17 @@ name := "websocket-chat"
 
 version := "1.0"
 
-javacOptions += "-Xlint:deprecation"     
+lazy val root = (project in file(".")).enablePlugins(PlayJava)
+
+scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
   javaJdbc,
-  javaEbean,
   cache,
-  "com.typesafe" %% "play-plugins-redis" % "2.1.1"
-)    
+  javaWs
+)
 
-resolvers += "org.sedis" at "http://pk11-scratch.googlecode.com/svn/trunk"
+// Play provides two styles of routers, one expects its actions to be injected, the
+// other, legacy style, accesses its actions statically.
+routesGenerator := InjectedRoutesGenerator
 
-playJavaSettings
