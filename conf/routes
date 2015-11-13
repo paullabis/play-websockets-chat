@@ -3,10 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                                controllers.Application.index()
-GET     /room                            controllers.Application.chatRoom(username: String ?= null)
-GET     /room/chat                       controllers.Application.chat(username)
-GET     /assets/javascripts/chatroom.js  controllers.Application.chatRoomJs(username)
+GET     /                                       @controllers.Application.index()
+GET        /room                                @controllers.Application.chatRoom(username: String ?= null, roomName: String ?= null)
+GET        /room/:roomName/chat                 @controllers.Application.chat(username, roomName: String)
+GET        /assets/javascripts/chatroom.js      @controllers.Application.chatRoomJs(username, roomName)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                    controllers.Assets.at(path="/public", file)
