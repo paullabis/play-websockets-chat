@@ -1,5 +1,6 @@
 package controllers;
 
+import components.ChatRoom;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.WebSocket;
@@ -40,7 +41,7 @@ public class Application extends Controller {
         return new WebSocket<JsonNode>() {
             public void onReady(WebSocket.In<JsonNode> in, WebSocket.Out<JsonNode> out){
                 try {
-                    components.chat.ChatRoom.join(roomName, username, in, out);
+                    ChatRoom.join(roomName, username, in, out);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
